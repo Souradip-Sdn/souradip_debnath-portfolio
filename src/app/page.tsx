@@ -660,7 +660,7 @@ function ExperienceSection() {
     <section id="experience" className="py-24 px-6 max-w-6xl mx-auto">
       <div className="section-fade">
         <div className="flex items-center gap-4 mb-16">
-          <span className="font-mono text-xs text-purple-400 tracking-widest uppercase">// 01</span>
+          <span className="font-mono text-xs text-purple-400 tracking-widest uppercase">{"// 01"}</span>
           <h2 className="font-display font-black text-5xl md:text-7xl uppercase text-white">
             Work <span className="text-gradient-cyan">Experience</span>
           </h2>
@@ -720,7 +720,7 @@ function ProjectsSection() {
       <div className="section-fade">
         <div className="flex items-center justify-between mb-16 flex-wrap gap-4">
           <div className="flex items-center gap-4">
-            <span className="font-mono text-xs text-purple-400 tracking-widest uppercase">// 02</span>
+            <span className="font-mono text-xs text-purple-400 tracking-widest uppercase">{"// 02"}</span>
             <h2 className="font-display font-black text-5xl md:text-7xl uppercase text-white">
               Latest <span className="text-gradient-purple">Work</span>
             </h2>
@@ -819,6 +819,7 @@ function SkillBar({ name, level }: { name: string; level: number }) {
   };
 
   // Run on scroll into view (initial)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) runAnimation(); },
@@ -826,7 +827,7 @@ function SkillBar({ name, level }: { name: string; level: number }) {
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
-  }, []);
+  }, []); // runAnimation is stable — defined in same render scope
 
   // Re-run on hover
   const handleMouseEnter = () => {
@@ -864,7 +865,7 @@ function SkillsSection() {
     <section id="skills" className="py-24 px-6 max-w-6xl mx-auto">
       <div className="section-fade">
         <div className="flex items-center gap-4 mb-16">
-          <span className="font-mono text-xs text-purple-400 tracking-widest uppercase">// 03</span>
+          <span className="font-mono text-xs text-purple-400 tracking-widest uppercase">{"// 03"}</span>
           <h2 className="font-display font-black text-5xl md:text-7xl uppercase text-white">
             My <span className="text-gradient-cyan">Stack</span>
           </h2>
@@ -998,7 +999,7 @@ function ContactSection() {
     <section id="contact" className="py-24 px-6 max-w-6xl mx-auto">
       <div className="section-fade">
         <div className="text-center mb-16">
-          <span className="font-mono text-xs text-purple-400 tracking-widest uppercase">// 04</span>
+          <span className="font-mono text-xs text-purple-400 tracking-widest uppercase">{"// 04"}</span>
           <h2 className="font-display font-black text-5xl md:text-8xl uppercase text-white mt-2">
             Level Up{" "}
             <span className="italic text-gradient-purple">Together</span>
